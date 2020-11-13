@@ -1,0 +1,240 @@
+﻿<!--
+    Name: Nirmal Patel
+    Date: 6 November 2020
+    SID: 100767993   
+-->
+
+<!--START of Window-->
+<Window x:Class="Lab3NavigateTheWorld.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3NavigateTheWorld"
+        mc:Ignorable="d"
+        Title="Navigate The World"
+        Height="350" Width="500">
+    
+    <!--START of MAIN GRID-->
+    <Grid>
+        <!--Tab Control for all 3 Tabs-->
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <!--Tab Item for Create Entry-->
+            <TabItem x:Name="tbCreateEntry" Header="Create Entry">
+                <!--Content grid inside tab item Create Entry-->
+                <Grid>
+                    
+                    <!--Stack panel to make MAIN content responsive-->
+                    <StackPanel Margin="0,20,0,0"
+                                Orientation="Vertical" 
+                                HorizontalAlignment="Center">
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal">
+                            <!--Lable for BUYER'S NAME-->
+                            <Label x:Name="lblBuyerName" 
+                                   Content="Buyer Name:"
+                                   VerticalAlignment="Center"/>
+                            <!--Textbox for BUYER'S NAME-->
+                            <TextBox x:Name ="txtBuyerName" 
+                                     Width="120" Height="20"
+                                     Margin="0,10"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal">
+                            <!--Lable for NUMBER OF SHARES NAME-->
+                            <Label x:Name="lblNumOfShares" 
+                                   Content="# of Shares:"
+                                   VerticalAlignment="Center"/>
+                            <!--Textbox for NUMBER OF SHARES NAME-->
+                            <TextBox x:Name ="txtNumOfShares"
+                                     Width="120" Height="20"
+                                     Margin="0,10"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+                        
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal">
+                            <!--Lable for DATE PURCHASED-->
+                            <Label x:Name="lblDatePurchased" 
+                                   Content="Date Purchased:"
+                                   VerticalAlignment="Center"/>
+                            <!--Date Picker for DATE PURCHASED-->
+                            <DatePicker x:Name="dpDatePurchased"
+                                        Width="120" Height="25"
+                                        Margin="0,10"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal">
+                            <!--Lable for SHARE TYPE-->
+                            <Label x:Name="lblShareType" 
+                                   Content="Share Type:"
+                                   VerticalAlignment="Center"/>
+                            <!--Radio Button for COMMON-->
+                            <RadioButton x:Name="rbCommon" 
+                                         Content="Common" 
+                                         IsChecked="True"
+                                         Margin="5,10"/>
+                            <!--Radio Button for PREFERRED-->
+                            <RadioButton x:Name="rbPreferred" 
+                                         Content="Preferred"
+                                         Margin="5,10"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+
+                        <!--Button for BUYER'S NAME-->
+                        <Button x:Name="btnCreateEntry" 
+                                Content="Create Entry" 
+                                Height="25" Width="100"
+                                Margin="0,10" 
+                                Click="btnCreateEntry_Click" />
+                    <!--END of STACK PANEL-->
+                    </StackPanel>
+                <!--END of GRID-->
+                </Grid>
+            </TabItem>
+            <!--END of TAB ITEM-->
+
+            <!--Tab Item for View Summary-->
+            <TabItem x:Name="tbViewSummary" Header="View Summary">
+                <!--Start of tab's GRID-->
+                <Grid>
+                        <!--Stack panel to make content responsive-->
+                    <StackPanel Margin="20" 
+                                    Orientation="Vertical"
+                                    HorizontalAlignment="Center">
+
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center"
+                                        Margin="5">
+                            <!--Lable for NUMBER OF COMMON SHARES SOLD-->
+                            <Label x:Name="lblNumCommonSold" 
+                                       Content="# of Common Shares Sold:"/>
+                            <!--Textbox for NUMBER OF COMMON SHARES SOLD-->
+                            <TextBox x:Name="txtNumCommonSold" 
+                                     Width="100" Height="25"
+                                     IsEnabled="False"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center"
+                                        Margin="5">
+                            <!--Lable for NUMBER OF PREFERRED SHARES SOLD-->
+                            <Label x:Name="lblNumPreferredSold"
+                                       Content="# of Preferred Shares Sold:"/>
+                            <!--Textbox for NUMBER OF PREFERRED SHARES SOLD-->
+                            <TextBox x:Name="txtNumPreferredSold"
+                                         Width="100" Height="25"
+                                     IsEnabled="False"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center"
+                                        Margin="5">
+                            <!--Lable for REVENUE GENERATED-->
+                            <Label x:Name="lblRevenue"
+                                       Content="Revenue Generated:"/>
+                            <!--Textbox for REVENUE GENERATED-->
+                            <TextBox x:Name="txtRevenue"
+                                         Width="100" Height="25"
+                                     IsEnabled="False"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center"
+                                        Margin="5">
+                            <!--Lable for COMMON SHARES AVAILABLE-->
+                            <Label x:Name="lblCommonSharesAvailable"
+                                       Content="Common Shares Available:"/>
+                            <!--Textbox for COMMON SHARES AVAILABLE-->
+                            <TextBox x:Name="txtCommonSharesAvailable"
+                                         Width="100" Height="25"
+                                     IsEnabled="False"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+
+                        <!--Stack panel to make content responsive-->
+                        <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center"
+                                        Margin="5">
+                            <!--Lable for PREFERRED SHARES AVAILABLE-->
+                            <Label x:Name="lblPreferredSharesAvailable"
+                                       Content="Preferred Shares Available:"/>
+                            <!--Textbox for PREFERRED SHARES AVAILABLE-->
+                            <TextBox x:Name="txtPreferredSharesAvailable"
+                                         Width="100" Height="25"
+                                     IsEnabled="False"/>
+                        <!--END of STACK PANEL-->
+                        </StackPanel>
+                    <!--END of STACK PANEL-->
+                    </StackPanel>
+                <!--END of tab's GRID-->
+                </Grid>
+            </TabItem>
+            <!--END of TAB ITEM-->
+
+            <!--Tab Item for View Entries-->
+            <TabItem x:Name="tbViewEntries" Header="View Enteries">
+                <!--START of GRID-->
+                <Grid>
+                    <!--DATA GRID for tab item View Entries-->
+                    <DataGrid Name="viewEntriesGrid"></DataGrid>
+                <!--END of GRID-->
+                </Grid>
+            </TabItem>
+            <!--END of TAB ITEM-->
+
+            <!--Tab Item for View Objects-->
+            <TabItem x:Name="tbViewObjects" Header="View Objects">
+                <!--START of GRID-->
+                <Grid>
+                    <!--START of List View for Shares-->
+                    <ListView x:Name="lsShares" 
+                              Margin="5">
+                        <ListView.View>
+                            <!--START of Grid View-->
+                            <GridView x:Name="sharesGridView">
+                                <!--START of Grid View for BuyerName-->
+                                <GridViewColumn Header="Name"
+                                                DisplayMemberBinding="{Binding BuyerName}" />
+                                <!--START of Grid View for Number of Shares-->
+                                <GridViewColumn Header="Number of Shares"
+                                                DisplayMemberBinding="{Binding NumShares}" />
+                                <!--START of Grid View for BuyDate-->
+                                <GridViewColumn Header="Date Purchased" 
+                                                DisplayMemberBinding="{Binding BuyDate}" />
+                                <!--START of Grid View for ShareType-->
+                                <GridViewColumn Header="Share Type"
+                                                DisplayMemberBinding="{Binding ShareType}" />
+                                <!--START of Grid View for Share Price-->
+                                <GridViewColumn Header="Share Price" 
+                                                DisplayMemberBinding="{Binding SharePrice}" />
+                                <!--START of Grid View for Voting Power-->
+                                <GridViewColumn Header="Voting Power" 
+                                                DisplayMemberBinding="{Binding VotingPower}" />
+                            <!--END of Grid View-->
+                            </GridView>
+                        </ListView.View>
+                        <!--END of List View-->
+                    </ListView>
+                <!--END of Grid-->
+                </Grid>
+            <!--END of Tab Item-->
+            </TabItem>
+
+        </TabControl>
+        <!--END of TAB CONTROL-->
+    </Grid>
+    <!--END of MAIN GRID-->
+</Window>
+<!--END of WINDOW-->
